@@ -1,10 +1,21 @@
-﻿@page
+﻿@page  "{id:int}"
+@using RazorPagesContacts.Data
 @model RazorPagesContacts.Pages.DetailsModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 @{
     ViewData["Title"] = "Details";
 }
 
+
+
 <h2>Details</h2>
+
+<h3>Name: @Model.Customer.Name      ID: @Model.Customer.Id</h3>
+
+<a asp-page="./Index">Back</a>
+
+
+
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

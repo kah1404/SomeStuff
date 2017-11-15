@@ -16,6 +16,8 @@ namespace RazorPagesContacts.Pages
             _db = db;
         }
 
+
+      
         [BindProperty]
         public Customer Customer { get; set; }
 
