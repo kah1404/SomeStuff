@@ -15,12 +15,12 @@
             @{
 
                 var rand = new Random();
-                int temp = rand.Next(0,Model.Customers.Count +1);
+                int temp = rand.Next(1,Model.Customers.Count+1);
             }
         </thead>
         <tbody>
             @foreach (var contact in Model.Customers)
-            {
+            {if(contact.Id == temp) { 
                 <tr>
                     <td>@contact.Id</td>
                     <td>@contact.Name</td>
@@ -32,8 +32,12 @@
                     </td>
                 </tr>
             }
+               
+            }
+      
             
-        <a asp-page="./Details" asp-route-id="@temp">Random</a>
+
+        <a asp-page="./" asp-route-id="@temp">Random</a>
         </tbody>
     </table>
 

@@ -15,7 +15,7 @@ namespace RazorPagesContacts.Pages
         {
             _db = db;
         }
-
+        
         public IList<Customer> Customers { get; private set; }
 
         public async Task OnGetAsync()
@@ -23,6 +23,7 @@ namespace RazorPagesContacts.Pages
             Customers = await _db.Customers.AsNoTracking().ToListAsync();
         }
 
+        
         public async Task<IActionResult> OnPostDeleteAsync(int id)
         {
             var contact = await _db.Customers.FindAsync(id);
