@@ -19,6 +19,7 @@
                     <td>@contact.Name</td>
                     <td>
                         <a asp-page="./Edit" asp-route-id="@contact.Id">edit</a>
+                        <a asp-page="./Details" asp-route-id="@contact.Id">Details</a>
                         <button type="submit" asp-page-handler="delete" 
                                 asp-route-id="@contact.Id">delete</button>
                     </td>
