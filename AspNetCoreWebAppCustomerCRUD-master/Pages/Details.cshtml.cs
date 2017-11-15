@@ -5,6 +5,8 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using RazorPagesContacts.Data;
+using System.Collections.Generic;
+using Microsoft.EntityFrameworkCore;
 
 namespace RazorPagesContacts.Pages
 {
@@ -18,6 +20,8 @@ namespace RazorPagesContacts.Pages
         {
             _db = db;
         }
+
+    
 
         [BindProperty]
         public Customer Customer { get; set; }

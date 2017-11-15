@@ -1,10 +1,16 @@
 ﻿@page  "{id:int}"
+@using Microsoft.EntityFrameworkCore
 @using RazorPagesContacts.Data
 @model RazorPagesContacts.Pages.DetailsModel
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 @{
     ViewData["Title"] = "Details";
+    var rand = new Random();
+    int temp = rand.Next(1,6);
+    
 }
+
+
 
 
 
@@ -14,7 +20,7 @@
 
 <a asp-page="./Index">Back</a>
 
-
+<a asp-page="./Details" asp-route-id="@temp">Random</a>
 
 
 @section Scripts {
