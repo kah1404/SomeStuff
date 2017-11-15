@@ -45,5 +45,16 @@ namespace MVCIsBetter.Controllers
             return View();
         }
 
+        public async Task<IActionResult> Create([Bind("Id,MovieName,Genre,Rating,ReleaseYear,ImdbLink")] MovieList movieList)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Add(movieList);
+                await db.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            }
+            return View(movieList);
+        }
+
     }
 }
