@@ -6,10 +6,17 @@
 <form method="post">
     <table class="table">
         <thead>
-            <tr>
-                <th>ID</th>
-                <th>Name</th>
-            </tr>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+        </tr>
+            
+            
+            @{
+
+                var rand = new Random();
+                int temp = rand.Next(0,4);
+            }
         </thead>
         <tbody>
             @foreach (var contact in Model.Customers)
@@ -24,6 +31,8 @@
                     </td>
                 </tr>
             }
+            
+        <a asp-page="./Edit" asp-route-id="@temp">Random</a>
         </tbody>
     </table>
 
